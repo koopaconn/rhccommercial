@@ -1,0 +1,25 @@
+body{
+  background-image: linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)),
+      url("/static/info_app/images/Kansas_City_skyline_as_night_descends.jpg") !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.jumbotron {
+  background-color: rgba(0,0,0,0.4);
+  color: white;
+}
+
+.img-fluid {
+  margin: auto;
+  display: block;
+}
+
+@media screen and (max-width:767px) {
+  .img-fluid {
+    height: 100px;
+  }
+}

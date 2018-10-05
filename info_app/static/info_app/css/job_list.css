@@ -1,0 +1,28 @@
+.text-center a{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+a .img-fluid{
+  margin: 10px;
+  width: 40%;
+  height: auto;
+  border: 5px solid #0B1B32;
+}
+
+.text-block{
+    position: absolute;
+    bottom: 50px;
+    left: 5%;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0.5%;
+    visibility: hidden;
+}
+
+#carlist{
+  margin-top: 30px;
+}

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title_block %}
+Cars
+{% endblock %}
+
+{% block style_block %}
+<link rel="stylesheet" href="{% static 'info_app/css/detail.css' %}">
+{% endblock %}
+
+{% block body_block %}
+
+<div class="container">
+  <div class="jumbotron">
+    <h2>Details:</h2>
+    <p></p>
+    <span id='cardetailspan'>
+      <ul>
+        <li><strong>Make:</strong> {{car_details.make}}</li>
+        <li><strong>Model:</strong> {{car_details.model}}</li>
+        <li><strong>Price:</strong> {{car_details.price}}</li>
+        <li><strong>Engine:</strong> {{car_details.engine}}</li>
+      </ul>
+      <ul>
+        <li><strong>Year:</strong> {{car_details.year}}</li>
+        <li><strong>Mileage:</strong> {{car_details.mileage}}</li>
+        <li><strong>Color:</strong> {{car_details.color}}</li>
+      </ul>
+      </span>
+    <p><strong>Features:</strong> {{car_details.moreinfo}}</p>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="text-center">
+    {% for carmedia in car_details.carpic.all %}
+      <a class="lightbox" href="#carpiclight{{carmedia.id}}">
+        <img class="center-block img-responsive" id='carpic{{carmedia.id}}' src="{{ carmedia.pic.url }}" alt="No Image">
+      </a>
+    {% endfor %}
+  </div>
+</div>
+
+{% for carmedia in car_details.carpic.all %}
+<div class="lightbox-target" id="carpiclight{{carmedia.id}}">
+  <img src="{{ carmedia.pic.url }}" alt="No Image">
+  <a class="lightbox-close" href="#carpic{{carmedia.id}}"></a>
+</div>
+{% endfor %}
+
+{% endblock %}

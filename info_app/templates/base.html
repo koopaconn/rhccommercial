@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>
+    {% block title_block %}
+
+    {% endblock %}
+  </title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% block style_block %}
+
+  {% endblock %}
+  <link rel="stylesheet" href="{% static 'info_app/css/base.css' %}">
+
+</head>
+
+<body>
+
+<div class='logobar'>
+  <a href="{% url 'index' %}"><img src="{% static 'info_app/images/logotran.png' %}" alt=""></a>
+</div>
+
+<nav class="navbar navbar-expand-md navbar-fixed-top navbar-dark main-nav">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#RHCCnavbar" aria-controls="RHCCnavbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse"  id="RHCCnavbar">
+    <ul class="nav navbar-nav mx-auto">
+      <li class="nav item active">
+        <a class='nav-link' href="{% url 'info_app:about' %}">About Us</a>
+      </li>
+      <li class="nav item active">
+        <a class='nav-link' href="{% url 'info_app:contact' %}">Contact</a>
+      </li>
+      <li class="nav item active">
+        <a class='nav-link' href="{% url 'info_app:testimonials' %}">Testimonials</a>
+      </li>
+      <li class="nav item active">
+        <a class='nav-link' href="{% url 'info_app:joblist' %}">Portfolio</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+  {% block body_block %}
+
+  {% endblock %}
+
+<div class="footer">
+  <table align='center'>
+    <td valign="top">
+      <p style="font-size:1.3em">Who we are:</p>
+      <p>Leaders in quality commercial claims, consulting, and contracting</p>
+    </td>
+    <td valign="top">
+      <p>Home Office</p>
+      <p>P.O.Box 4486 Kansas City KS 66104</p>
+    </td>
+    <td valign="top">
+      <p>nreasons2005@gmail.com <br>Tel: 913-485-0379 <br>Fax: 913-273-0585</p>
+    </td>
+  </table>
+</div>
+
+</body>
+
+</html>

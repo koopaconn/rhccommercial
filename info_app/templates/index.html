@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title_block %}
+Home
+{% endblock %}
+
+{% block style_block %}
+<link rel="stylesheet" href="{% static 'info_app/css/index.css' %}">
+{% endblock %}
+
+{% block body_block %}
+
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-3">Our Mission</h1>
+    <p class="lead">We are based on the belief that our customers' needs are of the utmost importance. Our entire team is committed to meeting those needs. As a result, a high percentage of our business is from repeat customers, referrals, and Insurance companies.
+    It is our objective at RHCC is to provide outstanding service. It is our policy to have a quality control person inspect every building to insure the completed claim meets our high standards. This policy has proved to be extremely effective in minimizing call backs.
+    Honesty is the cornerstone of RHCC work ethics. Just ask our business associates about us. Hiring RHCC as your professional Consultant ensures that your claim is handled correctly. You can be confident knowing that we will take care of everything.
+    We would welcome the opportunity to earn your trust and deliver you the best service in the industry.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-1">
+      <a href="{% url 'info_app:testimonials' %}">
+      <img src="{% static 'info_app/images/person-light.png' %}" alt="" class="img-fluid">
+    </a>
+    </div>
+    <div class="col-md-4">
+      <blockquote class="blockquote">
+        <a href="{% url 'info_app:testimonials' %}">
+        <p class="mb-0" style="color:white">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."</p>
+        <footer class="blockquote-footer">Person's Name from <cite title="Source Title">Company Name</cite></footer>
+        </a>
+      </blockquote>
+     </div>
+    <div class="col-md-5">
+
+    </div>
+    <div class="col-md-5">
+
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

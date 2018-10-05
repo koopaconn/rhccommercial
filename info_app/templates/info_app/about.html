@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title_block %}
+About
+{% endblock %}
+
+{% block style_block %}
+<link rel="stylesheet" href="{% static 'info_app/css/about.css' %}">
+{% endblock %}
+
+{% block body_block %}
+{# <div class="container" id='conall'> #}
+  <div class="container">
+    <div class="jumbotron">
+      <h2>About Us</h2>
+      <div class="row">
+        <div class="col-md-9">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+        <div class="col-md-3">
+          <img src="{% static 'info_app/images/joe_ryan.jpg' %}" alt="">
+          <p id='mech'>Joe and Ryan Eric</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Repairs:</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="col-md-6">
+        <h3>Tires:</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <img src="{% static 'info_app/images/motor-768750_1920.jpg' %}" alt="">
+      </div>
+      <div class="col-md-3">
+        <img src="{% static 'info_app/images/garage-hanging-mechanic-162553.jpg' %}" alt="">
+      </div>
+      <div class="col-md-3">
+        <img src="{% static 'info_app/images/automobile-automotive-black-1236788.jpg' %}" alt="">
+      </div>
+      <div class="col-md-3">
+        <img src="{% static 'info_app/images/automobile-automotive-car-195635.jpg' %}" alt="">
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container">
+    <h3>Location:</h3>
+    <iframe width="600" height="450" frameborder="0" style='border:0;display:flex;margin:auto' src="https://www.google.com/maps/embed/v1/place?q=Avenue%20Auto%20Saint%20Joseph&key=AIzaSyDiI-k4UCZ6qCzVYoWvfR3Y3FBYBGXSbXw" allowfullscreen></iframe>
+  </div>
+  <br>
+
+{% endblock %}
