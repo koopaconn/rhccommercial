@@ -12,20 +12,9 @@ Cars
 
 {% block body_block %}
 
-<div class="container" id='carlist'>
-  {# <h1>Available Cars</h1> #}
-  <div class="text-center">
-    {% for car in car_list %}
-    <a data-toggle="tooltip" title="{{car.model}} {{car.make}}" data-offset=80,40 href="{{car.id}}/">
-      <img data-toggle="tooltip" title="{{car.model}} {{car.make}}" src="{{car.headpic.url}}" class="img-fluid pull-xs-left" alt="No Image">
-      <div class="text-block">
-        <h5>{{car.model}} {{car.make}}</h5>
-      </div>
-    </a>
-    {% endfor %}
-  </div>
-</div>
-
-<script type="text/javascript" src='{% static '/info_app/js/car_list.js' %}'></script>
+{% for jobindex in job_list %}
+<p>{{jobindex.pk}}</p>
+<img src="{{jobindex.mainpic.url}}">
+{% endfor %}
 
 {% endblock %}

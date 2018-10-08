@@ -36,14 +36,18 @@ Home
         </a>
       </blockquote>
      </div>
-    <div class="col-md-5">
-
-    </div>
-    <div class="col-md-5">
-
+    <div class="col-md-7">
+      <div class="w3-content w3-display-container">
+        {% for jobindex in job_list_index %}
+        <img class="mySlides w3-animate-top img-fluid" src="{{jobindex.mainpic.url}}">
+        {% endfor %}
+        <button class="w3-button w3-display-left btn" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-display-right btn" onclick="plusDivs(+1)">&#10095;</button>
+      </div>
     </div>
   </div>
 </div>
 
+<script type="text/javascript" src='{% static '/info_app/js/index.js' %}'></script>
 
 {% endblock %}

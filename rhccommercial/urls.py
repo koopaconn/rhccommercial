@@ -18,7 +18,9 @@ from django.urls import path,include
 from info_app import views
 
 urlpatterns = [
-    path('',views.IndexView.as_view(),name='index'),
+    # path('',views.IndexView.as_view(),name='index'),
+    path('',views.view_joblist_index.as_view(),name='index'),
+    # path('',views.view_testimonial_index.as_view(),name='testimonial_index'),
     path('admin/', admin.site.urls),
     path('',include('info_app.urls',namespace='info_app'))
 ]

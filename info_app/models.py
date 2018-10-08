@@ -4,6 +4,7 @@ from django.db import models
 # Create your models here.
 class model_testimonial(models.Model):
     person = models.CharField(max_length=128)
+    company = models.CharField(max_length=128)
     quote = models.CharField(max_length=512,blank=True)
     personpic = models.ImageField()
 
@@ -21,7 +22,7 @@ class model_job(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("info_app:detail",kwargs={'pk':self.pk})
+        return reverse("info_app:jobdetails",kwargs={'pk':self.pk})
 
 class model_jobpic(models.Model):
     pic = models.ImageField()
