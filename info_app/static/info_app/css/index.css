@@ -26,10 +26,6 @@ body{
   background-size:     cover;
 }
 
-/* .col-md-1{
-  margin-top: 50%;
-} */
-
 @media screen and (max-width:767px) {
   .img-fluid {
     height: 100px;

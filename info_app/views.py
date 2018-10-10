@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from . import models
 from django.urls import reverse_lazy,reverse
 from django.views.generic import (View,TemplateView,ListView,DetailView)
+import random
 
 # Create your views here.
 class IndexView(TemplateView):
@@ -11,13 +12,23 @@ class IndexView(TemplateView):
 class view_joblist_index(ListView):
     context_object_name = 'job_list_index'
     model = models.model_job
+
+    def get_random3(self):
+        max_id = models.model_testimonial.objects.all().aggregate(max_id=Max("id"))['max_id']
+        while True:
+            pk = random.randint(1, max_id)
+            testimonial = models.model_testimonial.objects.filter(pk=pk).first()
+            if testimonial:
+                return testimonial
+
     template_name = 'index.html'
+
 
 class view_testimonial_index(ListView):
     context_object_name = 'testimonial_list_index'
     model = models.model_testimonial
     template_name = 'index.html'
-    
+
 class view_about(TemplateView):
     template_name = 'info_app/about.html'
 
