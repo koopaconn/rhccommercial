@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 {% block title_block %}
-Home
+RHCC - Home
 {% endblock %}
 
 {% block style_block %}
@@ -18,32 +18,31 @@ Home
     It is our objective at RHCC is to provide outstanding service. It is our policy to have a quality control person inspect every building to insure the completed claim meets our high standards. This policy has proved to be extremely effective in minimizing call backs.
     Honesty is the cornerstone of RHCC work ethics. Just ask our business associates about us. Hiring RHCC as your professional Consultant ensures that your claim is handled correctly. You can be confident knowing that we will take care of everything.
     We would welcome the opportunity to earn your trust and deliver you the best service in the industry.</p>
-    <p>Test</p>
-    <p>{{testimonial.pk}}</p>
   </div>
 </div>
 
-<div class="container">
+<div class="container" id="rowcont">
   <div class="row">
-    <div class="col-md-1 d-flex align-items-center">
+    <div class="col-md-2 d-flex align-items-center">
       <a href="{% url 'info_app:testimonials' %}">
-      <img src="{% static 'info_app/images/person-light.png' %}" alt="" class="img-fluid">
+      <img src="{{testimonial.personpic.url}}" alt="{% static 'info_app/images/person-light.png' %}" class="img-fluid" style="margin-bottom:10px;border:1px solid #7b3a20;">
     </a>
     </div>
-    <div class="col-md-4 d-flex align-items-center">
+    <div class="col-md-3 d-flex align-items-center justify-content-center">
       <blockquote class="blockquote">
         <a href="{% url 'info_app:testimonials' %}">
-        <p class="mb-0" style="color:white">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."</p>
-        <footer class="blockquote-footer">Person's Name from <cite title="Source Title">Company Name</cite></footer>
+        <p class="mb-0" style="color:white">"{{testimonial.quote}}"</p>
+        <footer class="blockquote-footer">{{testimonial.person}} from <cite title="Source Title">{{testimonial.company}}</cite></footer>
         </a>
       </blockquote>
      </div>
     <div class="col-md-7">
+      <h3>Portfolio</h3>
       <div class="w3-content w3-display-container">
         {% for jobindex in job_list_index %}
         <div class="w3-display-container mySlides" style="text-align:center;">
           <a href="{% url 'info_app:joblist' %}">
-          <img src="{{jobindex.mainpic.url}}" style="height:100%;width:100%" class="w3-animate-zoom" >
+          <img src="{{jobindex.mainpic.url}}" class="w3-animate-zoom" >
           </a>
           <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-animate-zoom" style="background-color:rgba(0,0,0,0.7);color:white;">
             {{jobindex.title}}

@@ -1,3 +1,6 @@
+* {
+  font-family: 'Noto Sans', sans-serif;
+}
 
 html,body {
   background-color: #D7D7D7;
@@ -43,6 +46,15 @@ a {
   font-size: 90%;
   margin-top: 20px;
 }
+
+.footer a {
+  color: rgba(211,211,211,0.6);
+}
+
+.footer p {
+  padding: 1.5%;
+}
+
 
 table{
   width: 50%;

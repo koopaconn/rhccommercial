@@ -29,7 +29,7 @@ SECRET_KEY = 'y@o-!2lxb&g9tgyy20azh5ea&j$z0h*)i5-5&@dcedwb0&*p1e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1","rhccommercial.pagekite.me"]
 
 
 # Application definition

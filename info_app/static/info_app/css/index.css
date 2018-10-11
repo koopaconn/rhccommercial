@@ -1,8 +1,8 @@
-body{
+body {
   background-image: linear-gradient(
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)),
-      url("/static/info_app/images/Kansas_City_skyline_as_night_descends.jpg") !important;
+      url("/static/info_app/images/Kansas_City_reduced.gif") !important;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -13,28 +13,56 @@ body{
   color: white;
 }
 
+/* #rowcont{
+  border-top: 3px solid #ED8600;
+} */
+
 .img-fluid {
   margin: auto;
   display: block;
 }
 
+.col-md-3 p {
+  margin-bottom: 20px;
+}
+
+.col-md-3 p,footer {
+  background-color: rgba(0,0,0,0.4);
+  padding: 10px;
+}
+
+.col-md-7 h3 {
+  color: white;
+  border-bottom: 1px solid #ED8600;
+  /* text-decoration: underline; */
+  text-align: right;
+}
+
 .mySlides{
   width:  100%;
   height: 400px;
-  background-position: 50% 50%;
+  background-position: center;
   background-repeat:   no-repeat;
   background-size:     cover;
+  overflow: hidden;
 }
 
-@media screen and (max-width:767px) {
-  .img-fluid {
-    height: 100px;
-  }
+.mySlides img{
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width:780px) {
   .mySlides{
     width:  100%;
-    height: 400px;
-    background-position: 50% 50%;
+    background-position: center;
     background-repeat:   no-repeat;
     background-size:     cover;
+    overflow: hidden;
+}
+
+  .mySlides img{
+    height: 100%;
+    width: auto;
   }
 }
