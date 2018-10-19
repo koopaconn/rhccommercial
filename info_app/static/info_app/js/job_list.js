@@ -28,3 +28,25 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
   captionText.innerHTML = dots[slideIndex-1].alt;
 }
+
+$(document).keydown(function(event){
+  if (String.fromCharCode(event.which) == '%') {
+    plusSlides(-1)
+  }
+  if (String.fromCharCode(event.which) == "'") {
+    plusSlides(1)
+  }
+});
+
+var myElement = document.getElementById("listSlidID");
+
+var mc = new Hammer(myElement);
+
+mc.on("swipeleft swiperight", function(ev) {
+    if (ev.type == "swipeleft") {
+      plusSlides(1)
+    }
+    if (ev.type == "swiperight") {
+      plusSlides(-1)
+    }
+});

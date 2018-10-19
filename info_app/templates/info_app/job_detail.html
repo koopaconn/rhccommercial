@@ -2,52 +2,57 @@
 {% load staticfiles %}
 
 {% block title_block %}
-Cars
+RHCC - Portfolio
 {% endblock %}
 
 {% block style_block %}
-<link rel="stylesheet" href="{% static 'info_app/css/detail.css' %}">
+<link rel="stylesheet" href="{% static 'info_app/css/job_detail.css' %}">
 {% endblock %}
 
 {% block body_block %}
 
 <div class="container">
   <div class="jumbotron">
-    <h2>Details:</h2>
     <p></p>
-    <span id='cardetailspan'>
-      <ul>
-        <li><strong>Make:</strong> {{car_details.make}}</li>
-        <li><strong>Model:</strong> {{car_details.model}}</li>
-        <li><strong>Price:</strong> {{car_details.price}}</li>
-        <li><strong>Engine:</strong> {{car_details.engine}}</li>
-      </ul>
-      <ul>
-        <li><strong>Year:</strong> {{car_details.year}}</li>
-        <li><strong>Mileage:</strong> {{car_details.mileage}}</li>
-        <li><strong>Color:</strong> {{car_details.color}}</li>
-      </ul>
-      </span>
-    <p><strong>Features:</strong> {{car_details.moreinfo}}</p>
-
-  </div>
-</div>
-
-<div class="container">
-  <div class="text-center">
-    {% for carmedia in car_details.carpic.all %}
-      <a class="lightbox" href="#carpiclight{{carmedia.id}}">
-        <img class="center-block img-responsive" id='carpic{{carmedia.id}}' src="{{ carmedia.pic.url }}" alt="No Image">
+    <p style="font-size:1.5em"><strong>{{job_details.title}}</strong> |
+      <a href="http://maps.google.com/?q=1200 {{job_details.location}}"
+      target="_blank" style='color:black'><em>{{job_details.location}}</em>
       </a>
-    {% endfor %}
+    </p>
+    <a class="lightbox" href="#jobpiclightrow">
+      <div class="row justify-content-md-center">
+        {% for jobmedia in job_details.jobpic.all %}
+        <div class="col justify-content-md-center">
+            <img class="center-block img-responsive"
+            style="length:100%" src="{{ jobmedia.pic.url }}" alt="No Image">
+        </div>
+        {% endfor %}
+      </div>
+    </a>
+    <div class="row">
+      <div class="col-md-9 justify-content-md-center">
+        <p>{{job_details.description}}</p>
+      </div>
+      <div class="col-md-3 justify-content-md-center">
+        <div class="w3-panel w3-leftbar">
+          <span style="font-size:3em;line-height:0.6em;opacity:0.2;margin:0;">&#10077;</span>
+          <p style="margin-top:0;"><i class="w3-serif w3-medium">{{job_details.quote}}</i></p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-{% for carmedia in car_details.carpic.all %}
-<div class="lightbox-target" id="carpiclight{{carmedia.id}}">
-  <img src="{{ carmedia.pic.url }}" alt="No Image">
-  <a class="lightbox-close" href="#carpic{{carmedia.id}}"></a>
+<div class="lightbox-target" id="jobpiclightrow">
+  {% for jobmedia2 in job_details.jobpic.all %}
+  <img class="mySlides" src="{{ jobmedia2.pic.url }}" alt="No Image">
+  <button class="w3-button w3-display-left w3-white w3-border" onclick="plusDivs(-1)">&#10094;</button>
+  <button class="w3-button w3-display-right w3-white w3-border" onclick="plusDivs(+1)">&#10095;</button>
+  {% endfor %}
+  <a class="lightbox-close" href="#"></a>
 </div>
-{% endfor %}
 
+<script type="text/javascript" src='{% static '/info_app/js/job_detail.js' %}'></script>
+
+</script>
 {% endblock %}

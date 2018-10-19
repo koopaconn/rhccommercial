@@ -15,3 +15,16 @@ function showDivs(n) {
     }
     x[slideIndex-1].style.display = "block";
 }
+
+var myElement = document.getElementById('indexSlidShow');
+
+var mc = new Hammer(myElement);
+
+mc.on("swipeleft swiperight", function(ev) {
+    if (ev.type == "swipeleft") {
+      plusDivs(+1)
+    }
+    if (ev.type == "swiperight") {
+      plusDivs(-1)
+    }
+});

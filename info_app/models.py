@@ -27,3 +27,9 @@ class model_job(models.Model):
 class model_jobpic(models.Model):
     pic = models.ImageField()
     job = models.ForeignKey(model_job,models.CASCADE,related_name='jobpic')
+
+class model_jobnum(models.Model):
+    number = models.CharField(max_length=128)
+
+    def __str__(self):
+        return self.number

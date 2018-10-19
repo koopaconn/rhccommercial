@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 {% block title_block %}
-About
+RHCC - About
 {% endblock %}
 
 {% block style_block %}
@@ -10,56 +10,54 @@ About
 {% endblock %}
 
 {% block body_block %}
-{# <div class="container" id='conall'> #}
-  <div class="container">
-    <div class="jumbotron">
-      <h2>About Us</h2>
-      <div class="row">
-        <div class="col-md-9">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-        <div class="col-md-3">
-          <img src="{% static 'info_app/images/joe_ryan.jpg' %}" alt="">
-          <p id='mech'>Joe and Ryan Eric</p>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <h3>Repairs:</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
-      <div class="col-md-6">
-        <h3>Tires:</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-          aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
+<div class="container" id="aboutContainer">
+  <div class="row">
+    <div class="col-md-9">
+      <h1 class="display-3">About</h1>
+      <p class="lead">We are based on the belief that our customers' needs are of the utmost importance. Our entire team is committed to meeting those needs. As a result, a high percentage of our business is from repeat customers, referrals, and Insurance companies.
+      It is our objective at RHCC is to provide outstanding service. It is our policy to have a quality control person inspect every building to insure the completed claim meets our high standards. This policy has proved to be extremely effective in minimizing call backs.
+      Honesty is the cornerstone of RHCC work ethics. Just ask our business associates about us. Hiring RHCC as your professional Consultant ensures that your claim is handled correctly. You can be confident knowing that we will take care of everything.
+      We would welcome the opportunity to earn your trust and deliver you the best service in the industry.</p>
     </div>
-    <div class="row">
-      <div class="col-md-3">
-        <img src="{% static 'info_app/images/motor-768750_1920.jpg' %}" alt="">
-      </div>
-      <div class="col-md-3">
-        <img src="{% static 'info_app/images/garage-hanging-mechanic-162553.jpg' %}" alt="">
-      </div>
-      <div class="col-md-3">
-        <img src="{% static 'info_app/images/automobile-automotive-black-1236788.jpg' %}" alt="">
-      </div>
-      <div class="col-md-3">
-        <img src="{% static 'info_app/images/automobile-automotive-car-195635.jpg' %}" alt="">
-      </div>
+    <div class="col-md-3 d-flex flex-column justify-content-center">
+      <p class="text-center w3-animate-zoom" style="font-size:3em;">{{jobnumber.number}}</p>
+      <p class="text-center" style="font-size:3em;line-height:0;">&#9866;</p>
+      <p class="text-center">Projects<br>Completed</p>
+      <p></p>
+      <p class="text-center w3-animate-zoom" style="font-size:3em">2007</p>
+      <p class="text-center" style="font-size:3em;line-height:0;">&#9866;</p>
+      <p class="text-center">Year Established</p>
     </div>
   </div>
-  <br>
-  <div class="container">
-    <h3>Location:</h3>
-    <iframe width="600" height="450" frameborder="0" style='border:0;display:flex;margin:auto' src="https://www.google.com/maps/embed/v1/place?q=Avenue%20Auto%20Saint%20Joseph&key=AIzaSyDiI-k4UCZ6qCzVYoWvfR3Y3FBYBGXSbXw" allowfullscreen></iframe>
+  <h1 class="text-center">Services</h1>
+  <div class="row">
+    <div class="col-md">
+      <img src="{% static 'info_app/images/Shingle-_large_hail,_bruised.jpg' %}" alt="">
+      <h5>Preclaim Planning</h5>
+      <p>Before filling your claim we want to complete our 5 Point Inspection of your property to insure
+        that filling is the best option for you. With our 5 Point Inspection report you can be insured your
+        claims process will run smoothly.</p>
+    </div>
+    <div class="col-md">
+      <img src="{% static 'info_app/images/512px-FEMA_-_33786_-_FEMA_contractor_inspects_a_mobile_home_in_California.jpg' %}" alt="">
+      <h5>5 Point Inspection</h5>
+      <ol>
+        <li>Review you policies</li>
+        <li>Inspect your property</li>
+        <li>Investigate the cause for the claim</li>
+        <li>Reserach the building type</li>
+        <li>Offer solutions repair or replace</li>
+      </ol>
+    </div>
+    <div class="col-md">
+      <img src="{% static 'info_app/images/insurance-claim.jpg' %}" alt="">
+      <h5>Claims Consulting</h5>
+      <p>As you Consultant we will insure that your claim will be handled in a professional manner and
+        working quickly to resolve the issues.</p>
+    </div>
   </div>
-  <br>
+</div>
+
 
 {% endblock %}

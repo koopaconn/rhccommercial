@@ -34,8 +34,13 @@ class view_testimonial_index(ListView):
 
 class view_about(TemplateView):
     template_name = 'info_app/about.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        jobnumber = models.model_jobnum.objects.filter(pk=1).first()
+        context['jobnumber'] = jobnumber
+        return context
 
-class view_testimonial(TemplateView):
+class view_testimonial(DetailView):
     context_object_name = 'testimonial_details'
     model = models.model_testimonial
     template_name = 'info_app/testimonials.html'

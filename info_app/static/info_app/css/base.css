@@ -45,6 +45,7 @@ a {
   width: 100%;
   font-size: 90%;
   margin-top: 20px;
+  z-index: 100000 !important;
 }
 
 .footer a {

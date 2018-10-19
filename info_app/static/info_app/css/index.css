@@ -48,8 +48,13 @@ body {
 }
 
 .mySlides img{
+  position: absolute;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
   width: 100%;
-  height: auto;
 }
 
 @media screen and (max-width:780px) {
