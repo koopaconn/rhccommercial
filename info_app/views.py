@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from . import models
+from . import forms
 from django.urls import reverse_lazy,reverse
-from django.views.generic import (View,TemplateView,ListView,DetailView)
+from django.views.generic import (View,TemplateView,ListView,DetailView,FormView)
+from django.core.mail import send_mail
 from random import randint
 
 # Create your views here.
@@ -32,7 +34,9 @@ class view_testimonial_index(ListView):
     model = models.model_testimonial
     template_name = 'index.html'
 
-class view_about(TemplateView):
+class view_about(ListView):
+    context_object_name = 'testimonial_list_about'
+    model = models.model_testimonial
     template_name = 'info_app/about.html'
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -40,13 +44,31 @@ class view_about(TemplateView):
         context['jobnumber'] = jobnumber
         return context
 
-class view_testimonial(DetailView):
+class view_testimonial(ListView):
     context_object_name = 'testimonial_details'
     model = models.model_testimonial
     template_name = 'info_app/testimonials.html'
 
-class view_contact(TemplateView):
-    template_name = 'info_app/contact.html'
+def view_contact(request):
+    if request.method == 'POST':
+        form = forms.form_contact(request.POST)
+        if form.is_valid():
+            # send email code goes here
+            sender_name = form.cleaned_data['name']
+            sender_email = form.cleaned_data['email']
+            sender_subject = form.cleaned_data['subject']
+
+            message = "{0} has sent you a new message:\n\n{1}".format(sender_name, form.cleaned_data['message'])
+            send_mail(sender_subject, message, sender_email, ['koopaconn@gmail.com'],fail_silently=False,)
+            form = 'Thanks for contacting us!'
+            return render(request, 'info_app/thanks.html', {'form': form})
+    else:
+        form = forms.form_contact()
+
+    return render(request, 'info_app/contact.html', {'form': form})
+
+class view_thanks(TemplateView):
+    template_name = 'thanks.html'
 
 class view_joblist(ListView):
     context_object_name = 'job_list'

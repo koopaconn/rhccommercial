@@ -40,12 +40,13 @@ a {
   color: rgba(211,211,211,0.6);
   font-weight: bold;
   background: #7b3a20;
-  position: relative;
   bottom: 0px;
   width: 100%;
   font-size: 90%;
   margin-top: 20px;
   z-index: 100000 !important;
+  position: relative;
+  bottom: 0;
 }
 
 .footer a {

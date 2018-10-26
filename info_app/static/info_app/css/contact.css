@@ -1,0 +1,46 @@
+#accordionExample {
+  color:black !important;
+  font-weight: bold;
+  border-radius: 3%;
+}
+
+.card-header {
+  /* background: rgb(243, 190, 121); */
+  background: darkgrey;
+}
+
+#accordionExample a{
+  color:black !important;
+}
+
+#accordionExample h1{
+  font-weight: bold;
+  color: white !important;
+  /* text-shadow: 4px 4px 0px black; */
+}
+
+#accordionExample h5{
+  color:black !important;
+  font-weight: bold;
+}
+
+@media screen and (max-width:767px) {
+  .fb-page,
+  .fb-page span,
+  .fb-page span iframe[style] {
+      width: 100% !important;
+  }
+  div iframe[style] {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width:800px) {
+  .col-lg {
+    margin: 10px;
+  }
+}
+
+.col-md {
+  overflow: hidden;
+}

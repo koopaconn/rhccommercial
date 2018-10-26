@@ -45,7 +45,7 @@ RHCC - Portfolio
 
 <div class="lightbox-target" id="jobpiclightrow">
   {% for jobmedia2 in job_details.jobpic.all %}
-  <img class="mySlides" src="{{ jobmedia2.pic.url }}" alt="No Image">
+  <img class="mySlides w3-animate-opacity" src="{{ jobmedia2.pic.url }}" alt="No Image">
   <button class="w3-button w3-display-left w3-white w3-border" onclick="plusDivs(-1)">&#10094;</button>
   <button class="w3-button w3-display-right w3-white w3-border" onclick="plusDivs(+1)">&#10095;</button>
   {% endfor %}

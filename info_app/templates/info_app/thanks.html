@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title_block %}
+RHCC - Contact
+{% endblock %}
+
+{% block style_block %}
+<link rel="stylesheet" href="{% static 'info_app/css/contact.css' %}">
+{% endblock %}
+
+{% block body_block %}
+
+<div class="jumbotron text-center">
+  <h1 class="display-3">Thank you!</h1>
+  <p class="lead">Your email was sent and we will get back to you as soon as we can.</p>
+  <p>Return <a href="/" style="color:black;">home</a></p>
+</div>
+
+{% endblock %}

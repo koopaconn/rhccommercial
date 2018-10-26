@@ -129,3 +129,11 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
+
+#Email Settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_SSL = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'koopaconn@gmail.com'
+EMAIL_HOST_PASSWORD = 'Weezer045678!'
+EMAIL_PORT = 465

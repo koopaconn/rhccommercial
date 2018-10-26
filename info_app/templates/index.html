@@ -13,24 +13,26 @@ RHCC - Home
 
 <div class="container">
   <div class="jumbotron">
-    <h1 class="display-3">Our Mission</h1>
-    <p class="lead">We are based on the belief that our customers' needs are of the utmost importance. Our entire team is committed to meeting those needs. As a result, a high percentage of our business is from repeat customers, referrals, and Insurance companies.
-    It is our objective at RHCC is to provide outstanding service. It is our policy to have a quality control person inspect every building to insure the completed claim meets our high standards. This policy has proved to be extremely effective in minimizing call backs.
-    Honesty is the cornerstone of RHCC work ethics. Just ask our business associates about us. Hiring RHCC as your professional Consultant ensures that your claim is handled correctly. You can be confident knowing that we will take care of everything.
-    We would welcome the opportunity to earn your trust and deliver you the best service in the industry.</p>
+    <h1 class="display-3 w3-animate-right">Our Mission</h1>
+    <p class="lead w3-animate-left">
+    We are Leaders in quality commercial claims, consulting, and contracting. At RHC Contracting, honesty is the cornerstone of our work ethics and we would welcome the opportunity to earn your trust.
+    Hiring RHC Contracting as your professional consultant ensures that your claim is handled correctly and that you are being delivered the best service in the industry.
+    You can be confident knowing we will take care of everything.
+    {# If you still aren't sure, just ask our business associates about us. #}
+    </p>
   </div>
 </div>
 
 <div class="container" id="rowcont">
   <div class="row">
     <div class="col-md-2 d-flex align-items-center">
-      <a href="{% url 'info_app:testimonials' %}">
+      <a href="{% url 'info_app:about' %}">
       <img src="{{testimonial.personpic.url}}" alt="{% static 'info_app/images/person-light.png' %}" class="img-fluid" style="margin-bottom:10px;border:1px solid #7b3a20;">
     </a>
     </div>
     <div class="col-md-3 d-flex align-items-center justify-content-center">
       <blockquote class="blockquote">
-        <a href="{% url 'info_app:testimonials' %}">
+        <a href="{% url 'info_app:about' %}">
         <p class="mb-0" style="color:white">"{{testimonial.quote}}"</p>
         <footer class="blockquote-footer">{{testimonial.person}} from <cite title="Source Title">{{testimonial.company}}</cite></footer>
         </a>
@@ -42,9 +44,9 @@ RHCC - Home
         {% for jobindex in job_list_index %}
         <div class="w3-display-container mySlides" style="text-align:center;">
           <a href="{% url 'info_app:joblist' %}">
-          <img src="{{jobindex.mainpic.url}}" class="w3-animate-zoom" >
+          <img src="{{jobindex.mainpic.url}}" class="w3-animate-opacity" >
           </a>
-          <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-animate-zoom" style="background-color:rgba(0,0,0,0.7);color:white;">
+          <div class="w3-display-bottomleft w3-large w3-container w3-padding-16 w3-animate-opacity" style="background-color:rgba(0,0,0,0.7);color:white;">
             {{jobindex.title}}
           </div>
         </div>

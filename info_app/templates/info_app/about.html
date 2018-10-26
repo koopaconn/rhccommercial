@@ -12,31 +12,64 @@ RHCC - About
 {% block body_block %}
 
 <div class="container" id="aboutContainer">
+  <div class="jumbotron" id="aboutjum">
   <div class="row">
     <div class="col-md-9">
-      <h1 class="display-3">About</h1>
-      <p class="lead">We are based on the belief that our customers' needs are of the utmost importance. Our entire team is committed to meeting those needs. As a result, a high percentage of our business is from repeat customers, referrals, and Insurance companies.
-      It is our objective at RHCC is to provide outstanding service. It is our policy to have a quality control person inspect every building to insure the completed claim meets our high standards. This policy has proved to be extremely effective in minimizing call backs.
-      Honesty is the cornerstone of RHCC work ethics. Just ask our business associates about us. Hiring RHCC as your professional Consultant ensures that your claim is handled correctly. You can be confident knowing that we will take care of everything.
-      We would welcome the opportunity to earn your trust and deliver you the best service in the industry.</p>
+      <p style="font-size:1.3em;">
+        Our objective at RHC Contracting is to provide outstanding service.
+        Which is why we have a quality control person at every building insuring the completed claim meets our high standards.
+        Our policy has proven extremely effective in minimizing call backs and providing excellent service.
+        <br><br>
+        We are based on the belief that our customers' needs are of the utmost importance and we guarantee our entire team will be committed to meeting those needs.
+        As a result, a high percentage of our business is from repeat customers, referrals, and Insurance companies.
+      </p>
     </div>
-    <div class="col-md-3 d-flex flex-column justify-content-center">
-      <p class="text-center w3-animate-zoom" style="font-size:3em;">{{jobnumber.number}}</p>
-      <p class="text-center" style="font-size:3em;line-height:0;">&#9866;</p>
-      <p class="text-center">Projects<br>Completed</p>
-      <p></p>
-      <p class="text-center w3-animate-zoom" style="font-size:3em">2007</p>
-      <p class="text-center" style="font-size:3em;line-height:0;">&#9866;</p>
-      <p class="text-center">Year Established</p>
+    <div class="col-md-3">
+      <img src="{% static 'info_app/images/family.jpg' %}" alt="">
     </div>
   </div>
-  <h1 class="text-center">Services</h1>
-  <div class="row">
+</div>
+</div>
+<div class="ribbon-container mx-auto">
+  <div class="ribbon">
+  <div class="row ribbon-content" id="stats">
+    <div class="col-md d-flex align-items-center flex-wrap">
+      <p class="text-center w3-animate-zoom" style="font-size:3em;width:100%;">{{jobnumber.number}}</p>
+      <p class="text-center" style="font-size:3em;line-height:0;;width:100%;">&#9866;</p>
+      <p class="text-center" style="width:100%;">Projects Completed</p>
+    </div>
+    <div class="col-md">
+      <div class="w3-content w3-display-container">
+        {% for testimonial in testimonial_list_about %}
+        <div class="mySlides">
+          <img src="{{testimonial.personpic.url}}" alt="{% static 'info_app/images/person-light.png' %}" class="img-fluid w3-animate-opacity">
+          <div class="bottom-left w3-animate-opacity d-flex align-items-end">
+            <blockquote class="blockquote">
+              <p class="quote" style="font-size:0.7em;margin:0;">"{{testimonial.quote}}"</p>
+              <footer class="blockquote-footer" style="font-size:0.7em;;margin:0;color:white">{{testimonial.person}} from <cite title="Source Title">{{testimonial.company}}</cite></footer>
+            </blockquote>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="col-md d-flex align-items-center flex-wrap">
+      <p class="text-center w3-animate-zoom" style="font-size:3em;width:100%;">2007</p>
+      <p class="text-center" style="font-size:3em;line-height:0;;width:100%;">&#9866;</p>
+      <p class="text-center" style="width:100%;">Year Established</p>
+    </div>
+  </div>
+</div>
+</div>
+<div class="container" id="aboutContainer">
+  <div class="jumbotron" id='servicesjum'>
+  <div class="row" id='services'>
     <div class="col-md">
       <img src="{% static 'info_app/images/Shingle-_large_hail,_bruised.jpg' %}" alt="">
       <h5>Preclaim Planning</h5>
-      <p>Before filling your claim we want to complete our 5 Point Inspection of your property to insure
-        that filling is the best option for you. With our 5 Point Inspection report you can be insured your
+      <p>Before filing your claim we want to complete our <u>5 Point Inspection</u> of your property.
+        This will insure that filing is the best option for you.
+        With our <u>5 Point Inspection</u> report you can rest easy that your
         claims process will run smoothly.</p>
     </div>
     <div class="col-md">
@@ -47,17 +80,19 @@ RHCC - About
         <li>Inspect your property</li>
         <li>Investigate the cause for the claim</li>
         <li>Reserach the building type</li>
-        <li>Offer solutions repair or replace</li>
+        <li>Offer solutions to repair or replace</li>
       </ol>
     </div>
     <div class="col-md">
       <img src="{% static 'info_app/images/insurance-claim.jpg' %}" alt="">
       <h5>Claims Consulting</h5>
-      <p>As you Consultant we will insure that your claim will be handled in a professional manner and
-        working quickly to resolve the issues.</p>
+      <p>As your Consultant we will insure that your claim gets handled quickly and in a
+         professional manner.</p>
     </div>
   </div>
 </div>
+</div>
 
+<script type="text/javascript" src='{% static '/info_app/js/about.js' %}'></script>
 
 {% endblock %}
