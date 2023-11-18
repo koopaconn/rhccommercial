@@ -59,7 +59,7 @@ def view_contact(request):
             sender_subject = form.cleaned_data['subject']
 
             message = "{0} has sent you a new message:\n\n{1}".format(sender_name, form.cleaned_data['message'])
-            send_mail(sender_subject, message, sender_email, ['koopaconn@gmail.com'],fail_silently=False,)
+            send_mail(sender_subject, message, sender_email, ['michelconn@outlook.com'],fail_silently=False,)
             form = 'Thanks for contacting us!'
             return render(request, 'info_app/thanks.html', {'form': form})
     else:

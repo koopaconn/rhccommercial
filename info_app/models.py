@@ -1,7 +1,6 @@
 from django.db import models
 
 # Create your models here.
-# Create your models here.
 class model_testimonial(models.Model):
     person = models.CharField(max_length=128)
     company = models.CharField(max_length=128)

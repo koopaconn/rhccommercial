@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load staticfiles %}
+{% load static %}
 
 {% block title_block %}
 RHCC - About
@@ -12,6 +12,26 @@ RHCC - About
 {% block body_block %}
 
 <div class="container" id="aboutContainer">
+<<<<<<< HEAD
+    <div class="jumbotron" id="aboutjum">
+        <div class="row">
+            <div class="col-md-9">
+                <p style="font-size:1.3em;">
+                    Our objective at RHC Contracting is to provide outstanding service.
+                    Which is why we have a quality control person at every building insuring the completed claim meets our high standards.
+                    Our policies have proven extremely effective in minimizing call backs and providing excellent service.
+                    <br><br>
+                    We are based on the belief that our customers' needs are of the utmost importance and we guarantee our entire team will be committed to meeting those needs.
+                    As a result, a high percentage of our business is from repeat customers, referrals, and Insurance companies.
+                    <br><br>
+                    We would welcome the opportunity to earn your trust and deliver you the best service in the industry.
+                </p>
+            </div>
+            <div class="col-md-3">
+                <img src="{% static 'info_app/images/family.jpg' %}" alt="">
+            </div>
+        </div>
+=======
   <div class="jumbotron" id="aboutjum">
   <div class="row">
     <div class="col-md-9">
@@ -25,36 +45,41 @@ RHCC - About
         <br><br>
         We would welcome the opportunity to earn your trust and deliver you the best service in the industry.
       </p>
+>>>>>>> 1591031b15d1759ee8c82f8ad880e55b79d87635
     </div>
-    <div class="col-md-3">
-      <img src="{% static 'info_app/images/family.jpg' %}" alt="">
-    </div>
-  </div>
-</div>
 </div>
 <div class="ribbon-container mx-auto">
-  <div class="ribbon">
-  <div class="row ribbon-content" id="stats">
-    <div class="col-md d-flex align-items-center flex-wrap">
-      <p class="text-center w3-animate-zoom" style="font-size:3em;width:100%;">{{jobnumber.number}}</p>
-      <p class="text-center" style="font-size:3em;line-height:0;;width:100%;">&#9866;</p>
-      <p class="text-center" style="width:100%;">Projects Completed</p>
-    </div>
-    <div class="col-md">
-      <div class="w3-content w3-display-container">
-        {% for testimonial in testimonial_list_about %}
-        <div class="mySlides">
-          <img src="{{testimonial.personpic.url}}" alt="{% static 'info_app/images/person-light.png' %}" class="img-fluid w3-animate-opacity">
-          <div class="bottom-left w3-animate-opacity d-flex align-items-end">
-            <blockquote class="blockquote">
-              <p class="quote" style="font-size:0.7em;margin:0;">"{{testimonial.quote}}"</p>
-              <footer class="blockquote-footer" style="font-size:0.7em;;margin:0;color:white">{{testimonial.person}} from <cite title="Source Title">{{testimonial.company}}</cite></footer>
-            </blockquote>
-          </div>
+    <div class="ribbon">
+        <div class="row ribbon-content" id="stats">
+            <div class="col-md d-flex align-items-center flex-wrap">
+                <p class="text-center w3-animate-zoom" style="font-size:3em;width:100%;">{{jobnumber.number}}</p>
+                <p class="text-center" style="font-size:3em;line-height:0;width:100%;">&#9866;</p>
+                <p class="text-center" style="width:100%;">Projects Completed</p>
+            </div>
+            <div class="col-md">
+                <div class="w3-content w3-display-container">
+                    {% for testimonial in testimonial_list_about %}
+                    <div class="mySlides">
+                        <img src="{{testimonial.personpic.url}}" alt="{% static 'info_app/images/person-light.png' %}" class="img-fluid w3-animate-opacity">
+                        <div class="bottom-left w3-animate-opacity d-flex align-items-end">
+                            <blockquote class="blockquote">
+                                <p class="quote" style="font-size:0.7em;margin:0;">"{{testimonial.quote}}"</p>
+                                <footer class="blockquote-footer" style="font-size:0.7em;;margin:0;color:white">{{testimonial.person}} from <cite title="Source Title">{{testimonial.company}}</cite></footer>
+                            </blockquote>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-md d-flex align-items-center flex-wrap">
+                <p class="text-center w3-animate-zoom" style="font-size:3em;width:100%;">2008</p>
+                <p class="text-center" style="font-size:3em;line-height:0;width:100%;">&#9866;</p>
+                <p class="text-center" style="width:100%;">Year Established</p>
+            </div>
         </div>
-        {% endfor %}
-      </div>
     </div>
+<<<<<<< HEAD
+=======
     <div class="col-md d-flex align-items-center flex-wrap">
       <p class="text-center w3-animate-zoom" style="font-size:3em;width:100%;">2008</p>
       <p class="text-center" style="font-size:3em;line-height:0;;width:100%;">&#9866;</p>
@@ -62,39 +87,45 @@ RHCC - About
     </div>
   </div>
 </div>
+>>>>>>> 1591031b15d1759ee8c82f8ad880e55b79d87635
 </div>
 <div class="container" id="aboutContainer">
-  <div class="jumbotron" id='servicesjum'>
-  <div class="row" id='services'>
-    <div class="col-md">
-      <img src="{% static 'info_app/images/Shingle-_large_hail,_bruised.jpg' %}" alt="">
-      <h5>Preclaim Planning</h5>
-      <p>Before filing your claim we want to complete our <u>5 Point Inspection</u> of your property.
-        This will insure that filing is the best option for you.
-        With our <u>5 Point Inspection</u> report you can rest easy that your
-        claims process will run smoothly.</p>
+    <div class="jumbotron" id='servicesjum'>
+        <div class="row" id='services'>
+            <div class="col-md">
+                <img src="{% static 'info_app/images/Shingle-_large_hail,_bruised.jpg' %}" alt="">
+                <h5>Preclaim Planning</h5>
+                <p>
+                    Before filing your claim we want to complete our <u>5 Point Inspection</u> of your property.
+                    This will insure that filing is the best option for you.
+                    With our <u>5 Point Inspection</u> report you can rest easy that your
+                    claims process will run smoothly.
+                </p>
+            </div>
+            <div class="col-md">
+                <img src="{% static 'info_app/images/512px-FEMA_-_33786_-_FEMA_contractor_inspects_a_mobile_home_in_California.jpg' %}" alt="">
+                <h5>5 Point Inspection</h5>
+                <ol>
+                    <li>Review you policies</li>
+                    <li>Inspect your property</li>
+                    <li>Investigate the cause for the claim</li>
+                    <li>Reserach the building type</li>
+                    <li>Offer solutions to repair or replace</li>
+                </ol>
+            </div>
+            <div class="col-md">
+                <img src="{% static 'info_app/images/insurance-claim.jpg' %}" alt="">
+                <h5>Claims Consulting</h5>
+                <p>
+                    As your Consultant we will insure that your claim gets handled quickly and in a
+                    professional manner.
+                </p>
+            </div>
+        </div>
     </div>
-    <div class="col-md">
-      <img src="{% static 'info_app/images/512px-FEMA_-_33786_-_FEMA_contractor_inspects_a_mobile_home_in_California.jpg' %}" alt="">
-      <h5>5 Point Inspection</h5>
-      <ol>
-        <li>Review you policies</li>
-        <li>Inspect your property</li>
-        <li>Investigate the cause for the claim</li>
-        <li>Reserach the building type</li>
-        <li>Offer solutions to repair or replace</li>
-      </ol>
-    </div>
-    <div class="col-md">
-      <img src="{% static 'info_app/images/insurance-claim.jpg' %}" alt="">
-      <h5>Claims Consulting</h5>
-      <p>As your Consultant we will insure that your claim gets handled quickly and in a
-         professional manner.</p>
-    </div>
-  </div>
-</div>
 </div>
 
-<script type="text/javascript" src='{% static '/info_app/js/about.js' %}'></script>
+<script type="text/javascript" src="{% static '/info_app/js/about.js' %}"></script>
 
+</script>
 {% endblock %}
